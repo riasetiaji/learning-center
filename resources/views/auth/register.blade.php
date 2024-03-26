@@ -16,6 +16,18 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
 
+        <!-- Role Id -->
+        <div class="mt-4">
+            <x-input-label for="role_id" :value="__('Role ID')" />
+            <select id="role_id" name="role_id" class="block mt-1 w-full" required autocomplete="role_id">
+                <option value="">Pilih peran</option>
+                <option value="1" {{ old('role_id') == '1' ? 'selected' : '' }}>Admin</option>
+                <option value="2" {{ old('role_id') == '2' ? 'selected' : '' }}>Mentor</option>
+                <option value="3" {{ old('role_id') == '3' ? 'selected' : '' }}>Karyawan</option>
+            </select>
+            <x-input-error :messages="$errors->get('role_id')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
