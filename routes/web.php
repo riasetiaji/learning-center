@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 // Login dashboard berdasarkan role user
-Route::get('/dashboard', [DashboardController::class, 'index'])
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
