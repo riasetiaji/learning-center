@@ -19,13 +19,21 @@
 
                 <!-- Menu Login Berdasarkan Role User -->
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    @if($user->role_id == 1)
-                        <button>Untuk Admin</button>
-                    @elseif($user->role_id == 2)
-                        <button>Untuk Mentor</button>
-                    @elseif($user->role_id == 3)
-                        <button>Untuk Karyawan</button>
-                    @endif                              
+                    @if(Auth::check())
+                        @if(Auth::user()->role_id == 1)
+                            <x-nav-link :href="route('materi')" :active="request()->routeIs('materi')">
+                                {{ __('Materi') }}
+                            </x-nav-link>
+                        @elseif(Auth::user()->role_id == 2)
+                            <x-nav-link :href="route('materi')" :active="request()->routeIs('materi')">
+                                {{ __('Materi') }}
+                            </x-nav-link>
+                        @elseif(Auth::user()->role_id == 3)
+                            <x-nav-link :href="route('materi')" :active="request()->routeIs('materi')">
+                                {{ __('Materi') }}
+                            </x-nav-link>
+                        @endif
+                    @endif                            
                 </div>
                 
             </div>
