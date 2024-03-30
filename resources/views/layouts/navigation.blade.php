@@ -16,6 +16,19 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+
+                {{-- Menu Login Berdasarkan Role User --}}
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    {{-- {{ __("Anda masuk!") }} sebagai {{ $user->name }} dengan role {{ $user->role_id }} keterangan role {{ $jenis_id }} --}}
+                    @if($user->role_id == 1)
+                        <button>Untuk Admin</button>
+                    @elseif($user->role_id == 2)
+                        <button>Untuk Mentor</button>
+                    @elseif($user->role_id == 3)
+                        <button>Untuk Karyawan</button>
+                    @endif                              
+                </div>
+                
             </div>
 
             <!-- Settings Dropdown -->

@@ -11,6 +11,8 @@ export default {
         "./resources/**/*.js",
     ],
 
+    darkMode: 'class', // Atur tema gelap menggunakan kelas CSS
+
     theme: {
         extend: {
             fontFamily: {
